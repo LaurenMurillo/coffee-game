@@ -1,7 +1,11 @@
 [gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://guodb3u4uetb"]
 
-[ext_resource type="Script" uid="uid://qa4dgthkxvsv" path="res://scripts/Recipe.gd" id="1_c23f5"]
+[ext_resource type="Script" uid="uid://qa4dgthkxvsv" path="res://scripts/Recipe.gd" id="1_gwtp6"]
 
 [resource]
-script = ExtResource("1_c23f5")
+script = ExtResource("1_gwtp6")
+recipe_name = "Warm Hug"
+milk = "moonmilk"
+syrup = "amberglow"
+temperature = "hot"
 metadata/_custom_type_script = "uid://qa4dgthkxvsv"
