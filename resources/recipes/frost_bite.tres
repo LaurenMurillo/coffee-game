@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bsh46sg4b5kfa"]
+
+[ext_resource type="Script" uid="uid://qa4dgthkxvsv" path="res://scripts/Recipe.gd" id="1_vrnsa"]
+
+[resource]
+script = ExtResource("1_vrnsa")
+recipe_name = "FrostBite"
+milk = "Frostmilk"
+syrup = "Frostberry"
+temperature = "Iced"
+metadata/_custom_type_script = "uid://qa4dgthkxvsv"

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cgcm2xyn4747p"]
+
+[ext_resource type="Script" uid="uid://bpglg2qj65e3q" path="res://scripts/counter.gd" id="1_sc7mx"]
+
+[node name="Counter" type="Control" unique_id=1925571107]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sc7mx")
+
+[node name="CustomerSprite" type="TextureRect" parent="." unique_id=1389741733]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OrderLabel" type="Label" parent="." unique_id=41853554]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 24.0
+offset_right = 44.0
+offset_bottom = 47.0
+
+[node name="ReactionLabel" type="Label" parent="." unique_id=2119511744]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 76.0
+offset_top = 27.0
+offset_right = 116.0
+offset_bottom = 50.0
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1046161707]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 156.0
+offset_top = 1.0
+offset_right = 196.0
+offset_bottom = 24.0
+
+[node name="StartBrewingButton" type="Button" parent="." unique_id=990384596]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 9.0
+offset_top = 89.0
+offset_right = 57.0
+offset_bottom = 120.0
+text = "Brew"
+
+[node name="NextCustomerButton" type="Button" parent="." unique_id=875153691]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 74.0
+offset_top = 86.0
+offset_right = 119.0
+offset_bottom = 117.0
+text = "Next"

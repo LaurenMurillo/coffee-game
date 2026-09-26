@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="coffeeGame"
-run/main_scene="uid://bd38ae8jtpmip"
+run/main_scene="uid://b7pwpxk07fc11"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*uid://bqyjw3oav7md2"
 
 [display]
 

@@ -4,4 +4,8 @@
 
 [resource]
 script = ExtResource("1_c23f5")
+recipe_name = "WarmHug"
+milk = "Moonmilk"
+syrup = "Amberglow"
+temperature = "Hot"
 metadata/_custom_type_script = "uid://qa4dgthkxvsv"
