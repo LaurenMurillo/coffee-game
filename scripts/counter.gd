@@ -25,7 +25,8 @@ func next_customer() -> void:
 	if GameState.start_new_customer():
 		var r := GameState.current_recipe
 		customer_sprite.texture = r.customer_sprite
-		order_label.text = "%s\nMilk: %s  Syrup: %s  %s" % [r.recipe_name, r.milk, r.syrup, r.temperature]
+		var order_text = "%s\nMilk: %s  Syrup: %s  %s" % [r.recipe_name, r.milk, r.syrup, r.temperature]
+		type_text(order_label, order_text)
 		start_brewing_button.show()
 	else:
 		customer_sprite.texture = null
@@ -52,6 +53,14 @@ func show_reaction() -> void:
 func update_score() -> void:
 	score_label.text = "Score: %d " % [GameState.score]
 
+
+func type_text(label: Label, text: String, speed: float = 0.03) -> void:
+	label.text = text
+	label.visible_characters = 0
+	for i in text.length():
+		label.visible_characters = i + 1
+		await get_tree().create_timer(speed).timeout
+	
 
 func _on_start_brewing_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/brewing.tscn")
