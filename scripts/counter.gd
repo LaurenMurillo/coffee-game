@@ -44,6 +44,7 @@ func show_reaction() -> void:
 		reaction_label.text = "Not bad."
 	else:
 		reaction_label.text = "This isn't what I ordered..."
+		update_score()
 	start_brewing_button.hide()
 	next_customer_button.show()
 
@@ -57,4 +58,6 @@ func _on_start_brewing_pressed() -> void:
 
 
 func _on_next_customer_pressed() -> void:
+	# -- Prepares reaction for next customer
+	GameState.awaiting_reaction = false
 	next_customer()
