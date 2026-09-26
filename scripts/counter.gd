@@ -29,8 +29,9 @@ func next_customer() -> void:
 		start_brewing_button.show()
 	else:
 		customer_sprite.texture = null
-		order_label.text = "That's all for today!"
+		#order_label.text = "That's all for today!"
 		start_brewing_button.hide()
+		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 
 
 func show_reaction() -> void:
