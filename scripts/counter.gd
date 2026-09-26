@@ -22,12 +22,14 @@ func _ready() -> void:
 func next_customer() -> void:
 	reaction_label.text = ""
 	next_customer_button.hide()
+	# -- Handles different customer lineup 
 	if GameState.start_new_customer():
 		var r := GameState.current_recipe
 		customer_sprite.texture = r.customer_sprite
 		var order_text = "%s\nMilk: %s  Syrup: %s  %s" % [r.recipe_name, r.milk, r.syrup, r.temperature]
 		type_text(order_label, order_text)
 		start_brewing_button.show()
+	# -- Triggers end scene when there's no more customers
 	else:
 		customer_sprite.texture = null
 		order_label.text = "That's all for today!"
@@ -45,7 +47,7 @@ func show_reaction() -> void:
 		reaction_label.text = "Not bad."
 	else:
 		reaction_label.text = "This isn't what I ordered..."
-		update_score()
+	update_score()
 	start_brewing_button.hide()
 	next_customer_button.show()
 
@@ -53,7 +55,7 @@ func show_reaction() -> void:
 func update_score() -> void:
 	score_label.text = "Score: %d " % [GameState.score]
 
-
+#-- Handles pretty text display to slowly show as typed
 func type_text(label: Label, text: String, speed: float = 0.03) -> void:
 	label.text = text
 	label.visible_characters = 0
