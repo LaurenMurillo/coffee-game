@@ -16,7 +16,7 @@ var current_recipe: Recipe
 # drinks that can be ordered
 var customer_queue: Array[Recipe] = [
 	preload("res://resources/recipes/frost_bite.tres"),
-	preload("res://resources/recipes/warm_hug.tres"),
+	preload("res://resources/recipes/warmHug.tres"),
 ]
 
 var queue_index: int = 0
