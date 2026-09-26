@@ -2,10 +2,6 @@ extends Node
 
 var score: int = 0
 
-# --- Settings ---
-# this variable was meant to set how many customers to generate
-# we are currently just going to loop through our customer_queue array
-const CUSTOMERS_PER_DAY: int = 8
 
 # -- current customer and order tracking ---
 #The counter sets it, 
@@ -14,6 +10,8 @@ const CUSTOMERS_PER_DAY: int = 8
 var current_recipe: Recipe
 
 # drinks that can be ordered
+# length of this array is how many customers we will have in game,
+# can have repeats
 var customer_queue: Array[Recipe] = [
 	preload("res://resources/recipes/frost_bite.tres"),
 	preload("res://resources/recipes/warmHug.tres"),
@@ -39,7 +37,7 @@ func start_new_customer() -> bool:
 func has_more_customers() -> bool:
 	return queue_index < customer_queue.size()
 	
-# changes our score
+# changes our score based on quality calculated in brew scene
 func record_result(quality: float) -> void:
 	last_quality = quality
 	awaiting_reaction = true

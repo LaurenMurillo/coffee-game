@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dxuklb128x47t"]
+
+[ext_resource type="Script" uid="uid://c732wg8gug1ne" path="res://scripts/end_screen.gd" id="1_kq7ac"]
+
+[node name="EndScreen" type="Control" unique_id=1810220185]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kq7ac")
+
+[node name="Label" type="Label" parent="." unique_id=1263904882]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 207.0
+offset_right = 926.0
+offset_bottom = 474.0
+text = "That's all for today!"
