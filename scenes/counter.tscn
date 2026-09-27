@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bpglg2qj65e3q" path="res://scripts/counter.gd" id="1_sc7mx"]
 [ext_resource type="Texture2D" uid="uid://c5n45qmojef0f" path="res://assets/sprites/forest_animation.tres" id="2_vv7id"]
-[ext_resource type="Texture2D" uid="uid://r3oxeyjo6vod" path="res://assets/WallArt.png" id="2_yttel"]
-[ext_resource type="Texture2D" uid="uid://yko1yu1ds5mg" path="res://assets/CounterArt.png" id="4_3q41x"]
+[ext_resource type="Texture2D" uid="uid://r3oxeyjo6vod" path="res://assets/sprites/backgrounds/WallArt.png" id="2_yttel"]
+[ext_resource type="Texture2D" uid="uid://yko1yu1ds5mg" path="res://assets/sprites/CounterArt.png" id="4_3q41x"]
 [ext_resource type="Texture2D" uid="uid://5y7khvp0r7jg" path="res://assets/sprites/brew_sprite.png" id="5_me8a0"]
 [ext_resource type="FontFile" uid="uid://c315hm0jbehvm" path="res://assets/fonts/yoster.ttf" id="5_skrdt"]
 [ext_resource type="Texture2D" uid="uid://chninwhxs8q3q" path="res://assets/sprites/next_btn.png" id="6_vv7id"]

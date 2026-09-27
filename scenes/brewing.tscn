@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cf1twmux30h3h" path="res://scripts/brewing.gd" id="1_yjw4b"]
 [ext_resource type="Script" uid="uid://c5p4cb76hexkl" path="res://scripts/timing_bar.gd" id="2_vlhhj"]
+[ext_resource type="Texture2D" uid="uid://chninwhxs8q3q" path="res://assets/sprites/next_btn.png" id="3_63l3e"]
+[ext_resource type="Texture2D" uid="uid://bnpwkvx1i55gg" path="res://assets/sprites/brew_bg.png" id="3_g7k8h"]
 
 [node name="Brewing" type="Control" unique_id=552229726]
 layout_mode = 3
@@ -11,6 +13,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yjw4b")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2053283701]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_g7k8h")
 
 [node name="OrderReminder" type="Label" parent="." unique_id=43389896]
 unique_name_in_owner = true
@@ -39,19 +52,22 @@ offset_bottom = 597.0
 [node name="ServeButton" type="Button" parent="." unique_id=141391801]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 987.0
-offset_top = 197.0
-offset_right = 1193.0
-offset_bottom = 244.0
-text = "Serve"
+offset_left = 888.0
+offset_top = 505.0
+offset_right = 1267.0
+offset_bottom = 746.0
+offset_transform_enabled = true
+icon = ExtResource("3_63l3e")
+flat = true
+expand_icon = true
 
 [node name="ResetButton" type="Button" parent="." unique_id=81984643]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 988.0
-offset_top = 298.0
-offset_right = 1187.0
-offset_bottom = 356.0
+offset_left = 670.0
+offset_top = 677.0
+offset_right = 869.0
+offset_bottom = 735.0
 text = "Reset"
 
 [node name="MilkStation" type="VBoxContainer" parent="." unique_id=23976680]

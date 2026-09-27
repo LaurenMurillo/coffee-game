@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r3oxeyjo6vod"
-path="res://.godot/imported/WallArt.png-62b5040387d1f93915f51f333aab1020.ctex"
+uid="uid://cm8wku5jtn65q"
+path="res://.godot/imported/syrup3.png-958bbc0902ef47b084f29c937de88687.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/WallArt.png"
-dest_files=["res://.godot/imported/WallArt.png-62b5040387d1f93915f51f333aab1020.ctex"]
+source_file="res://assets/sprites/ingredients/syrup3.png"
+dest_files=["res://.godot/imported/syrup3.png-958bbc0902ef47b084f29c937de88687.ctex"]
 
 [params]
 
