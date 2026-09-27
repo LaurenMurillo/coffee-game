@@ -27,29 +27,13 @@ offset_top = 16.0
 offset_right = 639.0
 offset_bottom = 168.0
 
-[node name="MilkOptions" type="HBoxContainer" parent="." unique_id=688633099]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 36.0
-offset_top = 384.0
-offset_right = 342.0
-offset_bottom = 645.0
-
-[node name="SyrupOptions" type="HBoxContainer" parent="." unique_id=370042637]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 490.0
-offset_top = 449.0
-offset_right = 794.0
-offset_bottom = 698.0
-
 [node name="Temperature" type="HBoxContainer" parent="." unique_id=2096770886]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 951.0
-offset_top = 474.0
-offset_right = 1255.0
-offset_bottom = 576.0
+offset_left = 117.0
+offset_top = 495.0
+offset_right = 421.0
+offset_bottom = 597.0
 
 [node name="ServeButton" type="Button" parent="." unique_id=141391801]
 unique_name_in_owner = true
@@ -68,3 +52,27 @@ offset_top = 298.0
 offset_right = 1187.0
 offset_bottom = 356.0
 text = "Reset"
+
+[node name="MilkStation" type="VBoxContainer" parent="." unique_id=23976680]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 114.0
+offset_top = 300.0
+offset_right = 393.0
+offset_bottom = 542.0
+
+[node name="MilkOptions" type="HBoxContainer" parent="MilkStation" unique_id=688633099]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SyrupStation" type="VBoxContainer" parent="." unique_id=1670533418]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 119.0
+offset_top = 264.0
+offset_right = 487.0
+offset_bottom = 554.0
+
+[node name="SyrupOptions" type="HBoxContainer" parent="SyrupStation" unique_id=370042637]
+unique_name_in_owner = true
+layout_mode = 2
