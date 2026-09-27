@@ -6,6 +6,7 @@
 
 extends Control
 
+# node references from Counter scene:
 @onready var customer_sprite: TextureRect = $CustomerSprite
 @onready var order_label: Label = $OrderLabel
 @onready var reaction_label: Label = $ReactionLabel
@@ -13,13 +14,6 @@ extends Control
 @onready var start_brewing_button: Button = $StartBrewingButton
 @onready var next_customer_button: Button = $NextCustomerButton
 
-# node references from Counter scene:
-@onready var customer_sprite: TextureRect = %CustomerSprite
-@onready var order_label: Label = %OrderLabel
-@onready var reaction_label: Label = %ReactionLabel
-@onready var score_label: Label = %ScoreLabel
-@onready var start_brewing_button: Button = %StartBrewingButton
-@onready var next_customer_button: Button = %NextCustomerButton
 
 # Godot runs this automatically every time the counter scene loads 
 func _ready() -> void:
