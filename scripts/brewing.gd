@@ -22,16 +22,18 @@ extends Control
 # --- Ingredient choices ---
 # One button is made for each value. Every value the .tres files use must be
 # listed here. 
-const MILK_OPTIONS: Array[String] = ["Moonmilk", "Frostmilk", "oat"]
-const SYRUP_OPTIONS: Array[String] = ["Frostberry", "Amberglow", "caramel"]
+const MILK_OPTIONS: Array[String] = ["Moonmilk", "Frostmilk", "Starlight foam", "Embercream"]
+const SYRUP_OPTIONS: Array[String] = ["Frostberry", "Amberglow", "Cinderspice", "Bittersap"]
 const TEMPERATURE_OPTIONS: Array[String] = ["Hot", "Iced"]
 
 # --- Scoring ---
 # Each correct part (temperature, milk, syrup) is worth a third of 100 points.
 const POINTS_PER_PART: float = 100.0 / 3.0
+const MISSED_AMOUNT_MULTIPLIER: float = 0.5   # right ingredient, amount outside the green
 
 # --- Station animation ---
 const SLIDE_TIME: float = 0.4   # seconds for a station to slide in or out
+const POUR_RESULT_DELAY: float = 1.0   # seconds to show where the bar stopped before moving on
 
 # --- Which station the player is on ---
 enum Stage { TEMPERATURE, MILK, SYRUP, READY }
@@ -41,6 +43,14 @@ var stage: Stage = Stage.TEMPERATURE
 var selected_temperature: String = ""
 var selected_milk: String = ""
 var selected_syrup: String = ""
+
+# milk bar variables:
+var milk_poured: bool = false       # has the player stopped the milk bar yet?
+var milk_in_green: bool = false     # did it stop inside the green zone?
+
+# syrup bar variables:
+var syrup_poured: bool = false
+var syrup_in_green: bool = false
 
 # Where each station sits in the editor, and its running slide animation.
 var home_positions: Dictionary = {}
@@ -52,6 +62,8 @@ var slide_tweens: Dictionary = {}
 @onready var temperature_options: HBoxContainer = %Temperature
 @onready var milk_station: Control = %MilkStation
 @onready var milk_options: HBoxContainer = %MilkOptions
+@onready var milk_bar: TimingBar = %MilkBar
+@onready var syrup_bar: TimingBar = %SyrupBar
 @onready var syrup_station: Control = %SyrupStation
 @onready var syrup_options: HBoxContainer = %SyrupOptions
 @onready var serve_button: Button = %ServeButton
@@ -69,6 +81,8 @@ func _ready() -> void:
 
 	serve_button.pressed.connect(_on_serve_pressed)
 	reset_button.pressed.connect(reset_cup)
+	milk_bar.stopped.connect(_on_milk_poured)
+	syrup_bar.stopped.connect(_on_syrup_poured)
 
 	show_order()
 	reset_cup()
@@ -102,7 +116,7 @@ func show_order() -> void:
 
 func update_cup() -> void:
 	cup_label.text = "In the cup:\nTemp: %s   Milk: %s   Syrup: %s" % [
-		display(selected_temperature), display(selected_milk), display(selected_syrup)
+		display(selected_temperature), pour_status(selected_milk, milk_poured, milk_in_green), pour_status(selected_syrup, syrup_poured, syrup_in_green),
 	]
 	# Serve only appears once every station is done and there is an order.
 	serve_button.visible = stage == Stage.READY and GameState.current_recipe != null
@@ -113,6 +127,12 @@ func reset_cup() -> void:
 	selected_temperature = ""
 	selected_milk = ""
 	selected_syrup = ""
+	milk_poured = false
+	milk_in_green = false
+	syrup_poured = false
+	syrup_in_green = false
+	milk_bar.reset()
+	syrup_bar.reset()
 
 	for container in [temperature_options, milk_options, syrup_options]:
 		for button in container.get_children():
@@ -133,6 +153,13 @@ func reset_cup() -> void:
 func display(value: String) -> String:
 	return "—" if value == "" else value.capitalize()
 
+# Shows an ingredient plus how the pour went, e.g. "Moonmilk (perfect)".
+func pour_status(choice: String, poured: bool, in_green: bool) -> String:
+	if choice == "":
+		return "—"
+	if not poured:
+		return "%s (click the bar!)" % choice.capitalize()
+	return "%s (%s)" % [choice.capitalize(), "perfect" if in_green else "off"]
 
 # --- Station animations ---
 
@@ -178,12 +205,27 @@ func _on_temperature_chosen(value: String) -> void:
 
 # --- Station 2: milk ---
 
-# Picking a milk finishes this station: milk slides out, syrup slides in.
+# Choosing a milk (or switching to a different one) starts a new pour.
 func _on_milk_chosen(value: String) -> void:
 	if stage != Stage.MILK:
 		return
 	selected_milk = value
+	milk_poured = false
+	milk_in_green = false
+	milk_bar.start()
+	update_cup()
+
+
+# Called by the milk bar when the player clicks it. Moves on to the syrup station.
+func _on_milk_poured(in_green: bool) -> void:
+	milk_poured = true
+	milk_in_green = in_green
 	stage = Stage.SYRUP
+	update_cup()
+	await get_tree().create_timer(POUR_RESULT_DELAY).timeout
+	# If Reset was pressed during the pause, don't slide anything.
+	if not is_inside_tree() or stage != Stage.SYRUP or not milk_poured:
+		return
 	slide_out(milk_station)
 	slide_in(syrup_station)
 	update_cup()
@@ -196,6 +238,16 @@ func _on_syrup_chosen(value: String) -> void:
 	if stage != Stage.SYRUP:
 		return
 	selected_syrup = value
+	syrup_poured = false
+	syrup_in_green = false
+	syrup_bar.start()
+	update_cup()
+
+
+# Called by the syrup bar when the player clicks it. The drink is ready to serve.
+func _on_syrup_poured(in_green: bool) -> void:
+	syrup_poured = true
+	syrup_in_green = in_green
 	stage = Stage.READY
 	update_cup()
 
@@ -209,18 +261,22 @@ func _on_serve_pressed() -> void:
 
 # --- Scoring ---
 
-# Returns 0, 33, 67 or 100 depending on how many parts match the order.
+# Adds up the three parts. Possible totals: 100, 83, 67, 50, 33, 17 or 0.
 func calculate_quality() -> float:
 	var r: Recipe = GameState.current_recipe
 	var quality := 0.0
-	if same(selected_temperature, r.temperature):
-		quality += POINTS_PER_PART
-	if same(selected_milk, r.milk):
-		quality += POINTS_PER_PART
-	if same(selected_syrup, r.syrup):
-		quality += POINTS_PER_PART
+	quality += part_points(selected_temperature, r.temperature, true)   # no amount for temperature
+	quality += part_points(selected_milk, r.milk, milk_in_green)
+	quality += part_points(selected_syrup, r.syrup, syrup_in_green)
 	return roundf(quality)
 
+# Wrong ingredient: 0. Right ingredient: full points in the green, half otherwise.
+func part_points(chosen: String, wanted: String, in_green: bool) -> float:
+	if not same(chosen, wanted):
+		return 0.0
+	if in_green:
+		return POINTS_PER_PART
+	return POINTS_PER_PART * MISSED_AMOUNT_MULTIPLIER
 
 # Compares two values ignoring capitalization and spaces; empty counts as "none".
 func same(a: String, b: String) -> bool:

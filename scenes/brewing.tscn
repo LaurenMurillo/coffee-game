@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://brsvtrcyuiexb"]
 
 [ext_resource type="Script" uid="uid://cf1twmux30h3h" path="res://scripts/brewing.gd" id="1_yjw4b"]
+[ext_resource type="Script" uid="uid://c5p4cb76hexkl" path="res://scripts/timing_bar.gd" id="2_vlhhj"]
 
 [node name="Brewing" type="Control" unique_id=552229726]
 layout_mode = 3
@@ -65,6 +66,11 @@ offset_bottom = 542.0
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="MilkBar" type="Control" parent="MilkStation" unique_id=719370581]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("2_vlhhj")
+
 [node name="SyrupStation" type="VBoxContainer" parent="." unique_id=1670533418]
 unique_name_in_owner = true
 layout_mode = 0
@@ -76,3 +82,8 @@ offset_bottom = 554.0
 [node name="SyrupOptions" type="HBoxContainer" parent="SyrupStation" unique_id=370042637]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="SyrupBar" type="Control" parent="SyrupStation" unique_id=1164893796]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("2_vlhhj")

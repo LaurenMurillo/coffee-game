@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_vrnsa")
-recipe_name = "FrostBite"
+recipe_name = "Frost Bite"
 milk = "Frostmilk"
 syrup = "Frostberry"
 temperature = "Iced"

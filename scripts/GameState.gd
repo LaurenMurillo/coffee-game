@@ -18,6 +18,9 @@ var current_recipe: Recipe
 var customer_queue: Array[Recipe] = [
 	preload("res://resources/recipes/frost_bite.tres"),
 	preload("res://resources/recipes/warmHug.tres"),
+	preload("res://resources/recipes/dreamers_draught.tres"),
+	preload("res://resources/recipes/glowspark_latte.tres"),
+	preload("res://resources/recipes/voldnight_potion.tres"),
 ]
 
 var queue_index: int = 0

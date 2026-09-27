@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_e7tkd")
-recipe_name = "WarmHug"
+recipe_name = "Warm Hug"
 customer_sprite = ExtResource("1_j4w2q")
 milk = "Moonmilk"
 syrup = "Amberglow"
