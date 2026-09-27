@@ -1,3 +1,9 @@
+# This file runs the counter scene. 
+# It's where customers arive, place an order, and then react to the drink
+# this scene gets loaded two different ways:
+# 1) customer arrives from start screen, or from next customer button press
+# 2) player came from brew station so customer can react to drink
+
 extends Control
 
 @onready var customer_sprite: TextureRect = $CustomerSprite
@@ -7,16 +13,24 @@ extends Control
 @onready var start_brewing_button: Button = $StartBrewingButton
 @onready var next_customer_button: Button = $NextCustomerButton
 
-#on ready;
+# node references from Counter scene:
+@onready var customer_sprite: TextureRect = %CustomerSprite
+@onready var order_label: Label = %OrderLabel
+@onready var reaction_label: Label = %ReactionLabel
+@onready var score_label: Label = %ScoreLabel
+@onready var start_brewing_button: Button = %StartBrewingButton
+@onready var next_customer_button: Button = %NextCustomerButton
+
+# Godot runs this automatically every time the counter scene loads 
 func _ready() -> void:
 	start_brewing_button.pressed.connect(_on_start_brewing_pressed)
 	next_customer_button.pressed.connect(_on_next_customer_pressed)
 	update_score()
 
-	if GameState.awaiting_reaction:
+	if GameState.awaiting_reaction:# by default awaiting_reaction set to false
 		show_reaction()
 	else:
-		next_customer()
+		next_customer()# this should run first and once a button is pressed then we can change scene
 
 #handles switching to new customer/ what happens when there's no more
 func next_customer() -> void:
@@ -26,13 +40,12 @@ func next_customer() -> void:
 	if GameState.start_new_customer():
 		var r := GameState.current_recipe
 		customer_sprite.texture = r.customer_sprite
-		var order_text = "%s\nMilk: %s  Syrup: %s  %s" % [r.recipe_name, r.milk, r.syrup, r.temperature]
+		var order_text = "%s\nTemp: %s  Milk: %s  Syrup: %s" % [r.recipe_name, r.temperature, r.milk, r.syrup]
 		type_text(order_label, order_text)
 		start_brewing_button.show()
 	# -- Triggers end scene when there's no more customers
 	else:
 		customer_sprite.texture = null
-		#order_label.text = "That's all for today!"
 		start_brewing_button.hide()
 		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 

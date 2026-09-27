@@ -1,3 +1,6 @@
+# This file functions as the game's shared memory
+# every scene reads from/writes to it
+# (it stays loaded during scene switches
 extends Node
 
 var score: int = 0
