@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cce3dwgxy4fjj" path="res://assets/sprites/syrups/amberglow.png" id="7_2wsds"]
 [ext_resource type="Texture2D" uid="uid://bkvpjuex0d7t0" path="res://assets/sprites/syrups/cinderspice.png" id="8_vi8h0"]
 [ext_resource type="Texture2D" uid="uid://bdr2euc2jc0xe" path="res://assets/sprites/syrups/bittersap.png" id="9_abi06"]
+[ext_resource type="Texture2D" uid="uid://k7c3gpid6pkn" path="res://assets/sprites/cup/pour.png" id="12_abi06"]
 
 [node name="Brewing" type="Control" unique_id=552229726]
 layout_mode = 3
@@ -185,3 +186,20 @@ offset_top = 279.0
 offset_right = 477.0
 offset_bottom = 282.0
 script = ExtResource("2_vlhhj")
+
+[node name="CupBase" type="TextureRect" parent="." unique_id=1648917853]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 296.0
+offset_top = 391.0
+offset_right = 390.0
+offset_bottom = 528.0
+
+[node name="LiquidOverlay" type="TextureRect" parent="." unique_id=1642563210]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 296.0
+offset_top = 391.0
+offset_right = 390.0
+offset_bottom = 528.0
+texture = ExtResource("12_abi06")

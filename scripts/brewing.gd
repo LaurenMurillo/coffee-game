@@ -25,6 +25,12 @@ extends Control
 const MILK_OPTIONS: Array[String] = ["Moonmilk", "Frostmilk", "Starlight foam", "Embercream"]
 const SYRUP_OPTIONS: Array[String] = ["Frostberry", "Amberglow", "Cinderspice", "Bittersap"]
 const TEMPERATURE_OPTIONS: Array[String] = ["Hot", "Iced"]
+const MILK_COLORS := {
+	"moonmilk": Color("dcdcf0"),
+	"frostmilk": Color("cceeff"),
+	"starlight foam": Color("f5f5ff"),
+	"embercream": Color("f0c080"),
+}
 
 # --- Scoring ---
 # Each correct part (temperature, milk, syrup) is worth a third of 100 points.
@@ -75,7 +81,8 @@ var slide_tweens: Dictionary = {}
 @onready var bittersap_button: TextureButton = %SyrupOptions/BittersapButton/Icon
 @onready var hot_button: TextureButton = %Temperature/HotButton/Icon
 @onready var iced_button: TextureButton = %Temperature/IcedButton/Icon
-
+@onready var cup_base: TextureRect = %CupBase
+@onready var liquid_overlay: TextureRect = %LiquidOverlay
 
 func _ready() -> void:
 	build_option_buttons(milk_options, MILK_OPTIONS, _on_milk_chosen)
@@ -149,6 +156,8 @@ func reset_cup() -> void:
 	milk_in_green = false
 	syrup_poured = false
 	syrup_in_green = false
+	cup_base.texture = null
+	liquid_overlay.visible = false
 	milk_bar.reset()
 	syrup_bar.reset()
 
@@ -224,6 +233,7 @@ func slide_distance() -> float:
 func _on_temperature_chosen(value: String) -> void:
 	if stage != Stage.TEMPERATURE:
 		return
+	cup_base.texture = load("res://assets/sprites/cup/%s.png" % ("mug_hot" if value == "Hot" else "cup_iced"))
 	selected_temperature = value
 	for card in temperature_options.get_children():
 		card.visible = card.name == (value + "Button")
@@ -239,6 +249,8 @@ func _on_milk_chosen(value: String) -> void:
 	if stage != Stage.MILK:
 		return
 	selected_milk = value
+	liquid_overlay.visible = true
+	liquid_overlay.modulate = MILK_COLORS[value.to_lower()]
 	milk_poured = false
 	milk_in_green = false
 	milk_bar.show() 

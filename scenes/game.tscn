@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b7pwpxk07fc11"]
 
 [ext_resource type="Script" uid="uid://biidpt3a8e28c" path="res://scripts/startScreen.gd" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://bh727f2nes1o7" path="res://assets/sprites/game_title.png" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://d0gcwaivcx0j6" path="res://assets/sprites/start_btn.png" id="2_yqjtg"]
 
 [node name="startScreen" type="Control" unique_id=1852009590]
@@ -10,13 +11,29 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_uwrxv")
 
+[node name="StartBg" type="TextureRect" parent="." unique_id=1238747722]
+layout_mode = 0
+offset_left = -162.0
+offset_top = -102.0
+offset_right = 1470.0
+offset_bottom = 799.0
+
+[node name="TitleRect" type="TextureRect" parent="." unique_id=1061269842]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 61.0
+offset_right = 1105.0
+offset_bottom = 536.0
+texture = ExtResource("2_lnu2h")
+
 [node name="PlayButton" type="Button" parent="." unique_id=1389756039]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 377.0
-offset_top = 264.0
-offset_right = 523.0
-offset_bottom = 368.0
+offset_left = 459.0
+offset_top = 432.0
+offset_right = 531.421
+offset_bottom = 493.8947
 scale = Vector2(4.75, 4.75)
 icon = ExtResource("2_yqjtg")
 flat = true
+expand_icon = true
