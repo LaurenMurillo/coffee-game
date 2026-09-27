@@ -9,4 +9,5 @@ func _ready() -> void:
 
 func _on_play_button_pressed() -> void:
 	GameState.reset_game()
+	MusicPlayer.play_click()
 	get_tree().change_scene_to_file("res://scenes/counter.tscn")

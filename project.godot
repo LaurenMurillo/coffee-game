@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameState="*uid://bqyjw3oav7md2"
+MusicPlayer="*uid://jrhjecqhvl0p"
 
 [display]
 
@@ -25,6 +26,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor]
+
+version_control/autoload_on_startup=true
 
 [physics]
 

@@ -10,6 +10,7 @@ func _ready() -> void:
 
 # function to play again btn calls counter scene and resets game vars
 func _on_play_again_pressed() -> void:
+	MusicPlayer.play_click()
 	GameState.reset_game()
 	get_tree().change_scene_to_file("res://scenes/counter.tscn")
  

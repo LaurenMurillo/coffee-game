@@ -75,11 +75,13 @@ func type_text(label: Label, text: String, speed: float = 0.03) -> void:
 
 #start brewing btn's function to switch to brewing scene
 func _on_start_brewing_pressed() -> void:
+	MusicPlayer.play_click()
 	get_tree().change_scene_to_file("res://scenes/brewing.tscn")
 
 
 #next customer btn function to switch to next recipe/customer
 func _on_next_customer_pressed() -> void:
 	# -- Prepares reaction for next customer
+	MusicPlayer.play_click()
 	GameState.awaiting_reaction = false
 	next_customer()
