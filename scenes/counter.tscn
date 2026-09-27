@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bpglg2qj65e3q" path="res://scripts/counter.gd" id="1_sc7mx"]
 [ext_resource type="Texture2D" uid="uid://r3oxeyjo6vod" path="res://assets/WallArt.png" id="2_yttel"]
-[ext_resource type="Texture2D" uid="uid://cckrrxx7rfhqd" path="res://assets/FairyCust.png" id="3_skrdt"]
 [ext_resource type="Texture2D" uid="uid://yko1yu1ds5mg" path="res://assets/CounterArt.png" id="4_3q41x"]
 [ext_resource type="FontFile" uid="uid://c315hm0jbehvm" path="res://assets/fonts/yoster.ttf" id="5_skrdt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yttel"]
+load_path = "res://.godot/imported/FairyCust.png-7ce33e2cbee19633c27c2031a1605fd4.ctex"
 
 [node name="Counter" type="Control" unique_id=1925571107]
 layout_mode = 3
@@ -39,7 +41,7 @@ offset_left = 302.0
 offset_top = 135.0
 offset_right = 682.0
 offset_bottom = 497.0
-texture = ExtResource("3_skrdt")
+texture = SubResource("CompressedTexture2D_yttel")
 
 [node name="CounterLayer" type="TextureRect" parent="." unique_id=1993386309]
 layout_mode = 0

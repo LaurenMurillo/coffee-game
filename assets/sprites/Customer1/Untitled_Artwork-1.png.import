@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cckrrxx7rfhqd"
-path="res://.godot/imported/FairyCust.png-7ce33e2cbee19633c27c2031a1605fd4.ctex"
+uid="uid://c5ah3772cbcix"
+path="res://.godot/imported/Untitled_Artwork-1.png-0c7775ccd4c4c358b17ecf70a4458039.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FairyCust.png"
-dest_files=["res://.godot/imported/FairyCust.png-7ce33e2cbee19633c27c2031a1605fd4.ctex"]
+source_file="res://assets/sprites/Customer1/Untitled_Artwork-1.png"
+dest_files=["res://.godot/imported/Untitled_Artwork-1.png-0c7775ccd4c4c358b17ecf70a4458039.ctex"]
 
 [params]
 
