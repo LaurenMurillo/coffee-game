@@ -61,7 +61,7 @@ var slide_tweens: Dictionary = {}
 @onready var cup_label: Label = %CupLabel
 @onready var temperature_options: HBoxContainer = %Temperature
 @onready var milk_station: Control = %MilkStation
-@onready var milk_options: HBoxContainer = %MilkOptions
+@onready var milk_options: HFlowContainer = %MilkOptions
 @onready var milk_bar: TimingBar = %MilkBar
 @onready var syrup_bar: TimingBar = %SyrupBar
 @onready var syrup_station: Control = %SyrupStation
@@ -104,13 +104,15 @@ func _ready() -> void:
 
 # Creates one toggle button per option inside a container.
 # The ButtonGroup makes them act like radio buttons: picking one un-picks the others.
-func build_option_buttons(container: HBoxContainer, options: Array[String], on_chosen: Callable) -> void:
+func build_option_buttons(container: HFlowContainer, options: Array[String], on_chosen: Callable) -> void:
 	var group := ButtonGroup.new()
 	for option in options:
 		var button := Button.new()
 		button.text = option.capitalize()
 		button.toggle_mode = true
 		button.button_group = group
+		button.add_theme_font_override("font", load("res://assets/fonts/yoster.ttf"))
+		button.add_theme_font_size_override("font_size", 16)
 		button.pressed.connect(on_chosen.bind(option))
 		container.add_child(button)
 

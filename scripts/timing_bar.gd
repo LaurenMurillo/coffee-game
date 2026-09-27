@@ -29,7 +29,7 @@ var green_start: float = 0.4     # where the green zone begins (0.0 to 1.0)
 func _ready() -> void:
 	# Give the bar a visible size if none was set in the Inspector.
 	if custom_minimum_size == Vector2.ZERO:
-		custom_minimum_size = Vector2(300, 28)
+		custom_minimum_size = Vector2(300, 16)
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	set_process(false)
 

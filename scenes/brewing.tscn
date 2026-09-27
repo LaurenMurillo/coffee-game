@@ -26,10 +26,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 22.0
-offset_top = -1.0
-offset_right = 22.0
-offset_bottom = -1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_g7k8h")
@@ -37,10 +37,10 @@ texture = ExtResource("3_g7k8h")
 [node name="OrderReminder" type="Label" parent="." unique_id=43389896]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 738.0
-offset_top = 71.0
-offset_right = 1026.0
-offset_bottom = 333.0
+offset_left = 717.0
+offset_top = 76.0
+offset_right = 1005.0
+offset_bottom = 338.0
 theme_override_colors/font_color = Color(0.34509805, 0.22352941, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("3_772gy")
 theme_override_font_sizes/font_size = 20
@@ -49,10 +49,10 @@ autowrap_mode = 3
 [node name="CupLabel" type="Label" parent="." unique_id=452004516]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 738.0
-offset_top = 254.0
-offset_right = 1052.0
-offset_bottom = 352.0
+offset_left = 718.0
+offset_top = 262.0
+offset_right = 1032.0
+offset_bottom = 349.0
 theme_override_colors/font_color = Color(0.34509805, 0.22352941, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("3_772gy")
 theme_override_font_sizes/font_size = 20
@@ -103,12 +103,12 @@ expand_icon = true
 [node name="MilkStation" type="VBoxContainer" parent="." unique_id=23976680]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 208.0
-offset_top = 223.0
-offset_right = 500.0
-offset_bottom = 292.0
+offset_left = 186.0
+offset_top = 220.0
+offset_right = 481.0
+offset_bottom = 261.0
 
-[node name="MilkOptions" type="HBoxContainer" parent="MilkStation" unique_id=688633099]
+[node name="MilkOptions" type="HFlowContainer" parent="MilkStation" unique_id=1809395311]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -168,20 +168,20 @@ text = "     Bittersap"
 layout_mode = 2
 texture_normal = ExtResource("9_abi06")
 
-[node name="MilkBar" type="Control" parent="." unique_id=719370581]
-unique_name_in_owner = true
-anchors_preset = 0
-offset_left = 206.0
-offset_top = 270.0
-offset_right = 501.0
-offset_bottom = 273.0
-script = ExtResource("2_vlhhj")
-
 [node name="SyrupBar" type="Control" parent="." unique_id=1164893796]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_left = 204.0
-offset_top = 270.0
-offset_right = 501.0
-offset_bottom = 272.0
+offset_left = 181.0
+offset_top = 279.0
+offset_right = 478.0
+offset_bottom = 281.0
+script = ExtResource("2_vlhhj")
+
+[node name="MilkBar" type="Control" parent="." unique_id=719370581]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 182.0
+offset_top = 279.0
+offset_right = 477.0
+offset_bottom = 282.0
 script = ExtResource("2_vlhhj")

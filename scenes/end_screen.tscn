@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c732wg8gug1ne" path="res://scripts/end_screen.gd" id="1_kq7ac"]
 [ext_resource type="FontFile" uid="uid://c315hm0jbehvm" path="res://assets/fonts/yoster.ttf" id="2_6e1uj"]
 [ext_resource type="Texture2D" uid="uid://bdgl0f0nun6cd" path="res://assets/sprites/speech_bg.png" id="2_87vmq"]
+[ext_resource type="Texture2D" uid="uid://c5n45qmojef0f" path="res://assets/sprites/forest_animation.tres" id="2_vj8vg"]
+[ext_resource type="Texture2D" uid="uid://r3oxeyjo6vod" path="res://assets/sprites/backgrounds/WallArt.png" id="3_plosh"]
 [ext_resource type="Texture2D" uid="uid://d0gcwaivcx0j6" path="res://assets/sprites/start_btn.png" id="4_g44xs"]
 
 [node name="EndScreen" type="Control" unique_id=1810220185]
@@ -14,30 +16,59 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kq7ac")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2114102751]
+[node name="WoodsBg" type="TextureRect" parent="." unique_id=1808555892]
 layout_mode = 0
-offset_left = 393.0
-offset_top = 119.0
-offset_right = 842.0
-offset_bottom = 373.0
+offset_left = 67.0
+offset_top = 84.0
+offset_right = 525.0
+offset_bottom = 655.0
+texture = ExtResource("2_vj8vg")
+
+[node name="WoodsBg2" type="TextureRect" parent="." unique_id=70034288]
+layout_mode = 0
+offset_left = 799.0
+offset_top = 31.0
+offset_right = 1409.0
+offset_bottom = 602.0
+texture = ExtResource("2_vj8vg")
+
+[node name="CafeBg" type="TextureRect" parent="." unique_id=865146643]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = 4.0
+offset_right = 295.0
+offset_bottom = 300.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_plosh")
+
+[node name="ScoreBg" type="TextureRect" parent="." unique_id=2114102751]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 107.0
+offset_right = 967.0
+offset_bottom = 380.0
 texture = ExtResource("2_87vmq")
 
-[node name="FinalScoreLabel" type="Label" parent="TextureRect" unique_id=1263904882]
+[node name="FinalScoreLabel" type="Label" parent="ScoreBg" unique_id=1263904882]
 layout_mode = 0
-offset_left = 110.0
-offset_top = 138.0
-offset_right = 228.0
-offset_bottom = 190.0
+offset_left = 182.0
+offset_top = 147.0
+offset_right = 300.0
+offset_bottom = 199.0
 theme_override_fonts/font = ExtResource("2_6e1uj")
 theme_override_font_sizes/font_size = 30
 text = "Score: "
 
 [node name="PlayAgainBtn" type="Button" parent="." unique_id=1666948281]
 layout_mode = 0
-offset_left = 439.0
-offset_top = 367.0
-offset_right = 861.0
-offset_bottom = 611.0
+offset_left = 467.0
+offset_top = 373.0
+offset_right = 889.0
+offset_bottom = 617.0
 icon = ExtResource("4_g44xs")
 flat = true
 expand_icon = true
