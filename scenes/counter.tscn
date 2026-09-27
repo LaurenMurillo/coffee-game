@@ -11,6 +11,10 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yttel"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_vv7id"]
+font = ExtResource("5_skrdt")
+font_size = 25
+
 [node name="Counter" type="Control" unique_id=1925571107]
 layout_mode = 3
 anchors_preset = 15
@@ -97,6 +101,7 @@ offset_left = 689.0
 offset_top = 343.0
 offset_right = 1068.0
 offset_bottom = 478.0
+label_settings = SubResource("LabelSettings_vv7id")
 
 [node name="StartBrewingButton" type="Button" parent="." unique_id=990384596]
 unique_name_in_owner = true
