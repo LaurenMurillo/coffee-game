@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://bpglg2qj65e3q" path="res://scripts/counter.gd" id="1_sc7mx"]
 [ext_resource type="Texture2D" uid="uid://r3oxeyjo6vod" path="res://assets/WallArt.png" id="2_yttel"]
 [ext_resource type="Texture2D" uid="uid://yko1yu1ds5mg" path="res://assets/CounterArt.png" id="4_3q41x"]
+[ext_resource type="Texture2D" uid="uid://5y7khvp0r7jg" path="res://assets/sprites/brew_sprite.png" id="5_me8a0"]
 [ext_resource type="FontFile" uid="uid://c315hm0jbehvm" path="res://assets/fonts/yoster.ttf" id="5_skrdt"]
+[ext_resource type="Texture2D" uid="uid://chninwhxs8q3q" path="res://assets/sprites/next_btn.png" id="6_vv7id"]
+[ext_resource type="Texture2D" uid="uid://ddv0chory807e" path="res://assets/sprites/music_btn.png" id="7_u6cvs"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yttel"]
-load_path = "res://.godot/imported/FairyCust.png-7ce33e2cbee19633c27c2031a1605fd4.ctex"
 
 [node name="Counter" type="Control" unique_id=1925571107]
 layout_mode = 3
@@ -80,25 +82,34 @@ offset_bottom = 478.0
 [node name="StartBrewingButton" type="Button" parent="." unique_id=990384596]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 766.0
-offset_top = 558.0
-offset_right = 849.0
-offset_bottom = 608.0
-text = "Brew"
+offset_left = 672.0
+offset_top = 473.00003
+offset_right = 835.8142
+offset_bottom = 574.71155
+scale = Vector2(2.045, 2.045)
+icon = ExtResource("5_me8a0")
+flat = true
+expand_icon = true
 
 [node name="NextCustomerButton" type="Button" parent="." unique_id=875153691]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 866.0
-offset_top = 564.0
-offset_right = 938.0
-offset_bottom = 609.0
-text = "Next"
+offset_left = 706.0
+offset_top = 456.0
+offset_right = 869.5
+offset_bottom = 576.5
+scale = Vector2(2, 2)
+icon = ExtResource("6_vv7id")
+flat = true
+expand_icon = true
 
 [node name="MuteButton" type="Button" parent="." unique_id=69331425]
 layout_mode = 0
-offset_left = 1109.0
-offset_top = 11.0
-offset_right = 1181.0
-offset_bottom = 53.0
-text = "Mute"
+offset_left = 1177.0
+offset_top = 18.0
+offset_right = 1305.0
+offset_bottom = 146.0
+scale = Vector2(0.61, 0.61)
+icon = ExtResource("7_u6cvs")
+flat = true
+expand_icon = true
