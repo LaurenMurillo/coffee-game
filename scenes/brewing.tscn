@@ -3,7 +3,14 @@
 [ext_resource type="Script" uid="uid://cf1twmux30h3h" path="res://scripts/brewing.gd" id="1_yjw4b"]
 [ext_resource type="Script" uid="uid://c5p4cb76hexkl" path="res://scripts/timing_bar.gd" id="2_vlhhj"]
 [ext_resource type="Texture2D" uid="uid://chninwhxs8q3q" path="res://assets/sprites/next_btn.png" id="3_63l3e"]
+[ext_resource type="FontFile" uid="uid://c315hm0jbehvm" path="res://assets/fonts/yoster.ttf" id="3_772gy"]
 [ext_resource type="Texture2D" uid="uid://bh1d6n4lsrcvo" path="res://assets/sprites/brew_bg.png" id="3_g7k8h"]
+[ext_resource type="Texture2D" uid="uid://kbuyhnrsfx43" path="res://assets/sprites/temp/ice.png" id="4_vi8h0"]
+[ext_resource type="Texture2D" uid="uid://16duc3tbb7ik" path="res://assets/sprites/temp/hot.png" id="5_abi06"]
+[ext_resource type="Texture2D" uid="uid://c3i5i35dkcpco" path="res://assets/sprites/syrups/frostberry.png" id="6_5ym33"]
+[ext_resource type="Texture2D" uid="uid://cce3dwgxy4fjj" path="res://assets/sprites/syrups/amberglow.png" id="7_2wsds"]
+[ext_resource type="Texture2D" uid="uid://bkvpjuex0d7t0" path="res://assets/sprites/syrups/cinderspice.png" id="8_vi8h0"]
+[ext_resource type="Texture2D" uid="uid://bdr2euc2jc0xe" path="res://assets/sprites/syrups/bittersap.png" id="9_abi06"]
 
 [node name="Brewing" type="Control" unique_id=552229726]
 layout_mode = 3
@@ -19,6 +26,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -1.0
+offset_right = 22.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_g7k8h")
@@ -26,78 +37,151 @@ texture = ExtResource("3_g7k8h")
 [node name="OrderReminder" type="Label" parent="." unique_id=43389896]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 18.0
-offset_top = 15.0
-offset_right = 256.0
-offset_bottom = 208.0
+offset_left = 738.0
+offset_top = 71.0
+offset_right = 1026.0
+offset_bottom = 333.0
+theme_override_colors/font_color = Color(0.34509805, 0.22352941, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("3_772gy")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
 
 [node name="CupLabel" type="Label" parent="." unique_id=452004516]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 503.0
-offset_top = 16.0
-offset_right = 639.0
-offset_bottom = 168.0
+offset_left = 738.0
+offset_top = 254.0
+offset_right = 1052.0
+offset_bottom = 352.0
+theme_override_colors/font_color = Color(0.34509805, 0.22352941, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("3_772gy")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
 
 [node name="Temperature" type="HBoxContainer" parent="." unique_id=2096770886]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 117.0
-offset_top = 495.0
-offset_right = 421.0
-offset_bottom = 597.0
+offset_left = 66.0
+offset_top = 434.0
+offset_right = 348.0
+offset_bottom = 602.0
+
+[node name="IcedButton" type="VBoxContainer" parent="Temperature" unique_id=520065950]
+layout_mode = 2
+
+[node name="Icon" type="TextureButton" parent="Temperature/IcedButton" unique_id=2034062060]
+layout_mode = 2
+texture_normal = ExtResource("4_vi8h0")
+
+[node name="Label" type="Label" parent="Temperature/IcedButton" unique_id=1481872475]
+layout_mode = 2
+text = "         Iced"
+
+[node name="HotButton" type="VBoxContainer" parent="Temperature" unique_id=1414585103]
+layout_mode = 2
+
+[node name="Icon" type="TextureButton" parent="Temperature/HotButton" unique_id=12028056]
+layout_mode = 2
+texture_normal = ExtResource("5_abi06")
+
+[node name="Label" type="Label" parent="Temperature/HotButton" unique_id=492356580]
+layout_mode = 2
+text = "          Hot"
 
 [node name="ServeButton" type="Button" parent="." unique_id=141391801]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 713.0
-offset_top = 444.0
-offset_right = 1092.0
-offset_bottom = 685.0
+offset_left = 853.0
+offset_top = 533.0
+offset_right = 1146.0
+offset_bottom = 720.0
 offset_transform_enabled = true
 icon = ExtResource("3_63l3e")
 flat = true
 expand_icon = true
 
-[node name="ResetButton" type="Button" parent="." unique_id=81984643]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 598.0
-offset_top = 651.0
-offset_right = 797.0
-offset_bottom = 709.0
-text = "Reset"
-
 [node name="MilkStation" type="VBoxContainer" parent="." unique_id=23976680]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 114.0
-offset_top = 300.0
-offset_right = 393.0
-offset_bottom = 542.0
+offset_left = 208.0
+offset_top = 223.0
+offset_right = 500.0
+offset_bottom = 292.0
 
 [node name="MilkOptions" type="HBoxContainer" parent="MilkStation" unique_id=688633099]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="MilkBar" type="Control" parent="MilkStation" unique_id=719370581]
-unique_name_in_owner = true
-layout_mode = 2
-script = ExtResource("2_vlhhj")
-
 [node name="SyrupStation" type="VBoxContainer" parent="." unique_id=1670533418]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 119.0
-offset_top = 264.0
-offset_right = 487.0
-offset_bottom = 554.0
+offset_left = 556.0
+offset_top = 391.0
+offset_right = 1028.0
+offset_bottom = 590.0
 
 [node name="SyrupOptions" type="HBoxContainer" parent="SyrupStation" unique_id=370042637]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="SyrupBar" type="Control" parent="SyrupStation" unique_id=1164893796]
-unique_name_in_owner = true
+[node name="FrostberryButton" type="VBoxContainer" parent="SyrupStation/SyrupOptions" unique_id=998853756]
 layout_mode = 2
+
+[node name="name_label" type="Label" parent="SyrupStation/SyrupOptions/FrostberryButton" unique_id=1442427714]
+layout_mode = 2
+text = "     Frostberry"
+
+[node name="Icon" type="TextureButton" parent="SyrupStation/SyrupOptions/FrostberryButton" unique_id=1738749860]
+layout_mode = 2
+texture_normal = ExtResource("6_5ym33")
+
+[node name="AmberglowButton" type="VBoxContainer" parent="SyrupStation/SyrupOptions" unique_id=1769674114]
+layout_mode = 2
+
+[node name="name_label" type="Label" parent="SyrupStation/SyrupOptions/AmberglowButton" unique_id=1759217725]
+layout_mode = 2
+text = "    Amberglow"
+
+[node name="Icon" type="TextureButton" parent="SyrupStation/SyrupOptions/AmberglowButton" unique_id=778075134]
+layout_mode = 2
+texture_normal = ExtResource("7_2wsds")
+
+[node name="CinderspiceButton" type="VBoxContainer" parent="SyrupStation/SyrupOptions" unique_id=1816239081]
+layout_mode = 2
+
+[node name="name_label" type="Label" parent="SyrupStation/SyrupOptions/CinderspiceButton" unique_id=2112086310]
+layout_mode = 2
+text = "   Cinder Spice"
+
+[node name="Icon" type="TextureButton" parent="SyrupStation/SyrupOptions/CinderspiceButton" unique_id=1861436844]
+layout_mode = 2
+texture_normal = ExtResource("8_vi8h0")
+
+[node name="BittersapButton" type="VBoxContainer" parent="SyrupStation/SyrupOptions" unique_id=1205805459]
+layout_mode = 2
+
+[node name="name_label" type="Label" parent="SyrupStation/SyrupOptions/BittersapButton" unique_id=1825594026]
+layout_mode = 2
+text = "     Bittersap"
+
+[node name="Icon" type="TextureButton" parent="SyrupStation/SyrupOptions/BittersapButton" unique_id=1567626850]
+layout_mode = 2
+texture_normal = ExtResource("9_abi06")
+
+[node name="MilkBar" type="Control" parent="." unique_id=719370581]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 206.0
+offset_top = 270.0
+offset_right = 501.0
+offset_bottom = 273.0
+script = ExtResource("2_vlhhj")
+
+[node name="SyrupBar" type="Control" parent="." unique_id=1164893796]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 204.0
+offset_top = 270.0
+offset_right = 501.0
+offset_bottom = 272.0
 script = ExtResource("2_vlhhj")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3i5i35dkcpco"
-path="res://.godot/imported/syrup2.png-21e4714da5c24de4b50281563a066b66.ctex"
+uid="uid://kbuyhnrsfx43"
+path="res://.godot/imported/ice.png-e494de25ea83e4e1f0366f486ffabcb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ingredients/syrup2.png"
-dest_files=["res://.godot/imported/syrup2.png-21e4714da5c24de4b50281563a066b66.ctex"]
+source_file="res://assets/sprites/temp/ice.png"
+dest_files=["res://.godot/imported/ice.png-e494de25ea83e4e1f0366f486ffabcb4.ctex"]
 
 [params]
 

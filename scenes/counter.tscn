@@ -115,10 +115,10 @@ theme_override_font_sizes/font_size = 30
 [node name="ReactionLabel" type="Label" parent="." unique_id=2119511744]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 689.0
-offset_top = 343.0
-offset_right = 1068.0
-offset_bottom = 478.0
+offset_left = 648.0
+offset_top = 165.0
+offset_right = 1027.0
+offset_bottom = 245.0
 label_settings = SubResource("LabelSettings_vv7id")
 
 [node name="StartBrewingButton" type="Button" parent="." unique_id=990384596]

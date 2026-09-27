@@ -67,22 +67,36 @@ var slide_tweens: Dictionary = {}
 @onready var syrup_station: Control = %SyrupStation
 @onready var syrup_options: HBoxContainer = %SyrupOptions
 @onready var serve_button: Button = %ServeButton
-@onready var reset_button: Button = %ResetButton
+
+#cyn-- syrups/temp sprites imported
+@onready var frostberry_button: TextureButton = %SyrupOptions/FrostberryButton/Icon
+@onready var amberglow_button: TextureButton = %SyrupOptions/AmberglowButton/Icon
+@onready var cinderspice_button: TextureButton = %SyrupOptions/CinderspiceButton/Icon
+@onready var bittersap_button: TextureButton = %SyrupOptions/BittersapButton/Icon
+@onready var hot_button: TextureButton = %Temperature/HotButton/Icon
+@onready var iced_button: TextureButton = %Temperature/IcedButton/Icon
 
 
 func _ready() -> void:
-	build_option_buttons(temperature_options, TEMPERATURE_OPTIONS, _on_temperature_chosen)
 	build_option_buttons(milk_options, MILK_OPTIONS, _on_milk_chosen)
-	build_option_buttons(syrup_options, SYRUP_OPTIONS, _on_syrup_chosen)
 
 	# stations slide back to where they were placed in the editor
 	home_positions[milk_station] = milk_station.position
 	home_positions[syrup_station] = syrup_station.position
 
 	serve_button.pressed.connect(_on_serve_pressed)
-	reset_button.pressed.connect(reset_cup)
 	milk_bar.stopped.connect(_on_milk_poured)
 	syrup_bar.stopped.connect(_on_syrup_poured)
+	
+	#temperature selection
+	hot_button.pressed.connect(_on_temperature_chosen.bind("Hot"))
+	iced_button.pressed.connect(_on_temperature_chosen.bind("Iced"))
+	
+	#syrup selection
+	frostberry_button.pressed.connect(_on_syrup_chosen.bind("Frostberry"))
+	amberglow_button.pressed.connect(_on_syrup_chosen.bind("Amberglow"))
+	cinderspice_button.pressed.connect(_on_syrup_chosen.bind("Cinderspice"))
+	bittersap_button.pressed.connect(_on_syrup_chosen.bind("Bittersap"))
 
 	show_order()
 	reset_cup()
@@ -124,6 +138,8 @@ func update_cup() -> void:
 
 # Empties the cup and goes back to the first station.
 func reset_cup() -> void:
+	milk_bar.hide()
+	syrup_bar.hide()
 	selected_temperature = ""
 	selected_milk = ""
 	selected_syrup = ""
@@ -134,11 +150,21 @@ func reset_cup() -> void:
 	milk_bar.reset()
 	syrup_bar.reset()
 
-	for container in [temperature_options, milk_options, syrup_options]:
-		for button in container.get_children():
-			button.set_pressed_no_signal(false)
-			button.show()
 
+	for button in milk_options.get_children():
+		button.set_pressed_no_signal(false)
+		button.show()
+
+	for temp_card in temperature_options.get_children():
+		var icon_button: TextureButton = temp_card.get_node("Icon")
+		icon_button.set_pressed_no_signal(false)
+		temp_card.show()
+
+	for syrup_card in syrup_options.get_children():
+		var icon_button: TextureButton = syrup_card.get_node("Icon")
+		icon_button.set_pressed_no_signal(false)
+		syrup_card.show()
+	
 	# Stop any slide in progress, put stations back home, hide milk and syrup.
 	for station in [milk_station, syrup_station]:
 		if slide_tweens.has(station):
@@ -148,6 +174,7 @@ func reset_cup() -> void:
 
 	stage = Stage.TEMPERATURE
 	update_cup()
+
 
 
 func display(value: String) -> String:
@@ -196,8 +223,8 @@ func _on_temperature_chosen(value: String) -> void:
 	if stage != Stage.TEMPERATURE:
 		return
 	selected_temperature = value
-	for button in temperature_options.get_children():
-		button.visible = button.text == value.capitalize()
+	for card in temperature_options.get_children():
+		card.visible = card.name == (value + "Button")
 	stage = Stage.MILK
 	slide_in(milk_station)
 	update_cup()
@@ -212,6 +239,7 @@ func _on_milk_chosen(value: String) -> void:
 	selected_milk = value
 	milk_poured = false
 	milk_in_green = false
+	milk_bar.show() 
 	milk_bar.start()
 	update_cup()
 
@@ -240,6 +268,9 @@ func _on_syrup_chosen(value: String) -> void:
 	selected_syrup = value
 	syrup_poured = false
 	syrup_in_green = false
+	#change bars
+	milk_bar.hide()
+	syrup_bar.show()
 	syrup_bar.start()
 	update_cup()
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkvpjuex0d7t0"
-path="res://.godot/imported/syrup4.png-8f257ae7ab053aa052a0a7581681fec1.ctex"
+path="res://.godot/imported/cinderspice.png-75c0f0dfc9e302b6f4dff5f76ec08f4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ingredients/syrup4.png"
-dest_files=["res://.godot/imported/syrup4.png-8f257ae7ab053aa052a0a7581681fec1.ctex"]
+source_file="res://assets/sprites/syrups/cinderspice.png"
+dest_files=["res://.godot/imported/cinderspice.png-75c0f0dfc9e302b6f4dff5f76ec08f4f.ctex"]
 
 [params]
 

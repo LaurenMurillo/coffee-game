@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cce3dwgxy4fjj"
-path="res://.godot/imported/syrup1.png-561b511a3a9d326de871618734c71d9f.ctex"
+uid="uid://c3i5i35dkcpco"
+path="res://.godot/imported/frostberry.png-31bd9262f58bb47b90ccc41eb7a5c4c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ingredients/syrup1.png"
-dest_files=["res://.godot/imported/syrup1.png-561b511a3a9d326de871618734c71d9f.ctex"]
+source_file="res://assets/sprites/syrups/frostberry.png"
+dest_files=["res://.godot/imported/frostberry.png-31bd9262f58bb47b90ccc41eb7a5c4c1.ctex"]
 
 [params]
 
