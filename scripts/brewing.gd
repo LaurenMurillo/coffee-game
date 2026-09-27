@@ -110,7 +110,7 @@ func show_order() -> void:
 		order_reminder.text = "No order. Start the game from the start screen."
 		return
 	order_reminder.text = "Order: %s\nTemp: %s   Milk: %s   Syrup: %s" % [
-		r.recipe_name, r.temperature, r.milk, r.syrup
+		r.order_line, r.temperature, r.milk, r.syrup
 	]
 
 

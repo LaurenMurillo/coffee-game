@@ -10,4 +10,5 @@ customer_sprite = ExtResource("1_nyvgt")
 milk = "Starlight foam"
 syrup = "Amberglow"
 temperature = "Iced"
+order_line = "Um... could I get a Dreamer's Draught? Iced, with starlight foam? I have class soon.."
 metadata/_custom_type_script = "uid://qa4dgthkxvsv"

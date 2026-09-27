@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://yko1yu1ds5mg" path="res://assets/sprites/CounterArt.png" id="4_3q41x"]
 [ext_resource type="Texture2D" uid="uid://5y7khvp0r7jg" path="res://assets/sprites/brew_sprite.png" id="5_me8a0"]
 [ext_resource type="FontFile" uid="uid://c315hm0jbehvm" path="res://assets/fonts/yoster.ttf" id="5_skrdt"]
+[ext_resource type="Texture2D" uid="uid://bdgl0f0nun6cd" path="res://assets/sprites/speech_bg.png" id="5_u6cvs"]
 [ext_resource type="Texture2D" uid="uid://chninwhxs8q3q" path="res://assets/sprites/next_btn.png" id="6_vv7id"]
 [ext_resource type="Texture2D" uid="uid://ddv0chory807e" path="res://assets/sprites/music_btn.png" id="7_u6cvs"]
 
@@ -74,23 +75,40 @@ offset_right = 1280.0
 offset_bottom = 723.0
 texture = ExtResource("4_3q41x")
 
+[node name="speech_bg" type="TextureRect" parent="." unique_id=457695992]
+layout_mode = 0
+offset_left = 481.0
+offset_top = -37.0
+offset_right = 1194.0
+offset_bottom = 311.0
+texture = ExtResource("5_u6cvs")
+
 [node name="OrderLabel" type="Label" parent="." unique_id=41853554]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 566.0
-offset_top = 46.0
-offset_right = 980.0
-offset_bottom = 174.0
+offset_left = 645.0
+offset_top = 112.0
+offset_right = 1059.0
+offset_bottom = 240.0
 theme_override_fonts/font = ExtResource("5_skrdt")
 theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+
+[node name="score_bg" type="TextureRect" parent="." unique_id=61096376]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 566.0
+offset_right = 426.0
+offset_bottom = 719.0
+texture = ExtResource("5_u6cvs")
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1046161707]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 227.0
-offset_top = 515.0
-offset_right = 409.0
-offset_bottom = 563.0
+offset_left = 145.0
+offset_top = 641.0
+offset_right = 327.0
+offset_bottom = 689.0
 theme_override_fonts/font = ExtResource("5_skrdt")
 theme_override_font_sizes/font_size = 30
 
@@ -106,10 +124,10 @@ label_settings = SubResource("LabelSettings_vv7id")
 [node name="StartBrewingButton" type="Button" parent="." unique_id=990384596]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 672.0
-offset_top = 473.00003
-offset_right = 835.8142
-offset_bottom = 574.71155
+offset_left = 688.0
+offset_top = 503.0
+offset_right = 856.21515
+offset_bottom = 611.5575
 scale = Vector2(2.045, 2.045)
 icon = ExtResource("5_me8a0")
 flat = true
@@ -118,10 +136,10 @@ expand_icon = true
 [node name="NextCustomerButton" type="Button" parent="." unique_id=875153691]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 706.0
-offset_top = 456.0
-offset_right = 869.5
-offset_bottom = 576.5
+offset_left = 696.0
+offset_top = 494.0
+offset_right = 859.5
+offset_bottom = 614.5
 scale = Vector2(2, 2)
 icon = ExtResource("6_vv7id")
 flat = true

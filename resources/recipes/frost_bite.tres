@@ -10,4 +10,5 @@ customer_sprite = ExtResource("1_0v1j7")
 milk = "Frostmilk"
 syrup = "Frostberry"
 temperature = "Iced"
+order_line = "A Frost Bite, please. Iced, frostberry on top. Cold is kind of my whole thing."
 metadata/_custom_type_script = "uid://qa4dgthkxvsv"

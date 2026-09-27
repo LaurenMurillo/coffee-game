@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh1d6n4lsrcvo"
-path="res://.godot/imported/brew_bg.png-5f366772555d7390613f4126984227ab.ctex"
+uid="uid://bdgl0f0nun6cd"
+path="res://.godot/imported/speech_bg.png-d60cdc586d209c56e3d8aedfca055a9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/brew_bg.png"
-dest_files=["res://.godot/imported/brew_bg.png-5f366772555d7390613f4126984227ab.ctex"]
+source_file="res://assets/sprites/speech_bg.png"
+dest_files=["res://.godot/imported/speech_bg.png-d60cdc586d209c56e3d8aedfca055a9b.ctex"]
 
 [params]
 

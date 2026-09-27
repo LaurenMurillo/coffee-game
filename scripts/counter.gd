@@ -41,7 +41,7 @@ func next_customer() -> void:
 		var r := GameState.current_recipe
 		customer_sprite.texture = r.customer_sprite
 		var order_text = "%s\nTemp: %s  Milk: %s  Syrup: %s" % [r.recipe_name, r.temperature, r.milk, r.syrup]
-		type_text(order_label, order_text)
+		type_text(order_label, r.order_line)
 		start_brewing_button.show()
 	# -- Triggers end scene when there's no more customers
 	else:

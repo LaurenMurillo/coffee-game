@@ -10,4 +10,5 @@ customer_sprite = ExtResource("1_j4w2q")
 milk = "Moonmilk"
 syrup = "Amberglow"
 temperature = "Iced"
+order_line = "Ooh, a Warm Hug please! Iced, with moonmilk — extra floaty vibes if you can manage it!"
 metadata/_custom_type_script = "uid://qa4dgthkxvsv"

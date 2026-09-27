@@ -7,3 +7,4 @@ class_name Recipe
 @export var milk: String = ""
 @export var syrup: String = ""
 @export var temperature: String = ""
+@export var order_line: String = ""

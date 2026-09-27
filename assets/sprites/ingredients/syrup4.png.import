@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh1d6n4lsrcvo"
-path="res://.godot/imported/brew_bg.png-5f366772555d7390613f4126984227ab.ctex"
+uid="uid://bkvpjuex0d7t0"
+path="res://.godot/imported/syrup4.png-8f257ae7ab053aa052a0a7581681fec1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/brew_bg.png"
-dest_files=["res://.godot/imported/brew_bg.png-5f366772555d7390613f4126984227ab.ctex"]
+source_file="res://assets/sprites/ingredients/syrup4.png"
+dest_files=["res://.godot/imported/syrup4.png-8f257ae7ab053aa052a0a7581681fec1.ctex"]
 
 [params]
 
