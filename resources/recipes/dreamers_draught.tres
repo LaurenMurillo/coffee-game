@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://dbs6ghltw3uev"]
+
+[ext_resource type="Script" uid="uid://qa4dgthkxvsv" path="res://scripts/Recipe.gd" id="1_pw2n0"]
+
+[resource]
+script = ExtResource("1_pw2n0")
+recipe_name = "Dreamer's Draught"
+milk = "Starlight foam"
+syrup = "Amberglow"
+temperature = "Iced"
+metadata/_custom_type_script = "uid://qa4dgthkxvsv"

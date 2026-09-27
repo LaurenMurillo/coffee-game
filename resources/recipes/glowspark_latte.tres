@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bm8fxw8qkler2"]
+
+[ext_resource type="Script" uid="uid://qa4dgthkxvsv" path="res://scripts/Recipe.gd" id="1_vy4ql"]
+
+[resource]
+script = ExtResource("1_vy4ql")
+recipe_name = "Glowspark Latte"
+milk = "Embercream"
+syrup = "Cinderspice"
+temperature = "Hot"
+metadata/_custom_type_script = "uid://qa4dgthkxvsv"

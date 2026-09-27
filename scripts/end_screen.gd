@@ -1,11 +1,13 @@
 extends Control
 
+@onready var final_score_label: Label = $FinalScoreLabel
+@onready var play_again_button: Button = $PlayAgainBtn
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	play_again_button.pressed.connect(_on_play_again_pressed)
+	final_score_label.text = "Final Score: %d" % GameState.score
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_play_again_pressed() -> void:
+	GameState.reset_game()
+	get_tree().change_scene_to_file("res://scenes/counter.tscn")
+ 

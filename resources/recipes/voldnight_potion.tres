@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://chfcgyyb7rt6c"]
+
+[ext_resource type="Script" uid="uid://qa4dgthkxvsv" path="res://scripts/Recipe.gd" id="1_fmynk"]
+
+[resource]
+script = ExtResource("1_fmynk")
+recipe_name = "Voldnight Potion"
+milk = "Frostmilk"
+syrup = "Bittersap"
+temperature = "Iced"
+metadata/_custom_type_script = "uid://qa4dgthkxvsv"

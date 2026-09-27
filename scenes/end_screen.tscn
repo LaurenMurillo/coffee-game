@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxuklb128x47t"]
 
 [ext_resource type="Script" uid="uid://c732wg8gug1ne" path="res://scripts/end_screen.gd" id="1_kq7ac"]
+[ext_resource type="FontFile" uid="uid://c315hm0jbehvm" path="res://assets/fonts/yoster.ttf" id="2_6e1uj"]
 
 [node name="EndScreen" type="Control" unique_id=1810220185]
 layout_mode = 3
@@ -11,10 +12,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kq7ac")
 
-[node name="Label" type="Label" parent="." unique_id=1263904882]
+[node name="FinalScoreLabel" type="Label" parent="." unique_id=1263904882]
 layout_mode = 0
-offset_left = 337.0
-offset_top = 207.0
-offset_right = 926.0
-offset_bottom = 474.0
-text = "That's all for today!"
+offset_left = 457.0
+offset_top = 295.0
+offset_right = 521.0
+offset_bottom = 347.0
+theme_override_fonts/font = ExtResource("2_6e1uj")
+text = "Score: "
+
+[node name="PlayAgainBtn" type="Button" parent="." unique_id=1666948281]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 403.0
+offset_right = 717.0
+offset_bottom = 477.0
+text = "Play Again"
