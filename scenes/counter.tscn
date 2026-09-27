@@ -92,3 +92,11 @@ offset_top = 564.0
 offset_right = 938.0
 offset_bottom = 609.0
 text = "Next"
+
+[node name="MuteButton" type="Button" parent="." unique_id=69331425]
+layout_mode = 0
+offset_left = 1109.0
+offset_top = 11.0
+offset_right = 1181.0
+offset_bottom = 53.0
+text = "Mute"

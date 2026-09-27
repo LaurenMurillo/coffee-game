@@ -13,18 +13,24 @@ extends Control
 @onready var score_label: Label = $ScoreLabel
 @onready var start_brewing_button: Button = $StartBrewingButton
 @onready var next_customer_button: Button = $NextCustomerButton
+@onready var mute_button: Button = $MuteButton
 
 
 # Godot runs this automatically every time the counter scene loads 
 func _ready() -> void:
 	start_brewing_button.pressed.connect(_on_start_brewing_pressed)
 	next_customer_button.pressed.connect(_on_next_customer_pressed)
+	mute_button.pressed.connect(_on_mute_pressed)
 	update_score()
 
 	if GameState.awaiting_reaction:# by default awaiting_reaction set to false
 		show_reaction()
 	else:
 		next_customer()# this should run first and once a button is pressed then we can change scene
+
+#adds functionality to mute button
+func _on_mute_pressed() -> void:
+	MusicPlayer.toggle_mute()
 
 #handles switching to new customer/ what happens when there's no more
 func next_customer() -> void:
