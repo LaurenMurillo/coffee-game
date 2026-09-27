@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgcm2xyn4747p"]
 
 [ext_resource type="Script" uid="uid://bpglg2qj65e3q" path="res://scripts/counter.gd" id="1_sc7mx"]
+[ext_resource type="Texture2D" uid="uid://c5n45qmojef0f" path="res://assets/sprites/forest_animation.tres" id="2_vv7id"]
 [ext_resource type="Texture2D" uid="uid://r3oxeyjo6vod" path="res://assets/WallArt.png" id="2_yttel"]
 [ext_resource type="Texture2D" uid="uid://yko1yu1ds5mg" path="res://assets/CounterArt.png" id="4_3q41x"]
 [ext_resource type="Texture2D" uid="uid://5y7khvp0r7jg" path="res://assets/sprites/brew_sprite.png" id="5_me8a0"]
@@ -19,13 +20,31 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sc7mx")
 
+[node name="WindowsBack" type="TextureRect" parent="." unique_id=2124482446]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 732.0
+offset_top = -22.0
+offset_right = -186.0
+offset_bottom = -191.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vv7id")
+
 [node name="WoodsBackground" type="TextureRect" parent="." unique_id=232973131]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = 46.0
+offset_right = -738.0
+offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_vv7id")
 
 [node name="WallLayer" type="TextureRect" parent="." unique_id=37763344]
 layout_mode = 1
@@ -40,7 +59,7 @@ texture = ExtResource("2_yttel")
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 302.0
-offset_top = 135.0
+offset_top = 115.0
 offset_right = 682.0
 offset_bottom = 497.0
 texture = SubResource("CompressedTexture2D_yttel")
