@@ -7,7 +7,7 @@ extends Control
 @onready var start_brewing_button: Button = $StartBrewingButton
 @onready var next_customer_button: Button = $NextCustomerButton
 
-
+#on ready;
 func _ready() -> void:
 	start_brewing_button.pressed.connect(_on_start_brewing_pressed)
 	next_customer_button.pressed.connect(_on_next_customer_pressed)
@@ -18,7 +18,7 @@ func _ready() -> void:
 	else:
 		next_customer()
 
-
+#handles switching to new customer/ what happens when there's no more
 func next_customer() -> void:
 	reaction_label.text = ""
 	next_customer_button.hide()
@@ -37,6 +37,7 @@ func next_customer() -> void:
 		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 
 
+#grabs current customer and recipe name and reacts depending on saved quality
 func show_reaction() -> void:
 	GameState.awaiting_reaction = false
 	customer_sprite.texture = GameState.current_recipe.customer_sprite
@@ -52,7 +53,7 @@ func show_reaction() -> void:
 	start_brewing_button.hide()
 	next_customer_button.show()
 
-
+# -- every time called score is updated (important for progress)
 func update_score() -> void:
 	score_label.text = "Score: %d " % [GameState.score]
 
@@ -65,10 +66,12 @@ func type_text(label: Label, text: String, speed: float = 0.03) -> void:
 		await get_tree().create_timer(speed).timeout
 	
 
+#start brewing btn's function to switch to brewing scene
 func _on_start_brewing_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/brewing.tscn")
 
 
+#next customer btn function to switch to next recipe/customer
 func _on_next_customer_pressed() -> void:
 	# -- Prepares reaction for next customer
 	GameState.awaiting_reaction = false
