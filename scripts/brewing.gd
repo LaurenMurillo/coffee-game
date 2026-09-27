@@ -71,7 +71,7 @@ func show_order() -> void:
 		# Happens if you run this scene directly with F6 instead of from the start screen.
 		order_reminder.text = "No order. Start the game from the start screen."
 		return
-	order_reminder.text = "Order: %s\nMilk: %s   Syrup: %s   %s" % [
+	order_reminder.text = "Order: %s\nMilk: %s   Syrup: %s   Temp: %s" % [
 		r.recipe_name, r.milk, r.syrup, r.temperature
 	]
 
