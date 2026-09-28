@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cce3dwgxy4fjj" path="res://assets/sprites/syrups/amberglow.png" id="7_2wsds"]
 [ext_resource type="Texture2D" uid="uid://bkvpjuex0d7t0" path="res://assets/sprites/syrups/cinderspice.png" id="8_vi8h0"]
 [ext_resource type="Texture2D" uid="uid://bdr2euc2jc0xe" path="res://assets/sprites/syrups/bittersap.png" id="9_abi06"]
-[ext_resource type="Texture2D" uid="uid://k7c3gpid6pkn" path="res://assets/sprites/cup/pour.png" id="12_abi06"]
+[ext_resource type="Texture2D" uid="uid://c4rrdgjapy22c" path="res://assets/sprites/cup/pour.png" id="12_abi06"]
 
 [node name="Brewing" type="Control" unique_id=552229726]
 layout_mode = 3

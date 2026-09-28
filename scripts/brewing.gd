@@ -25,12 +25,20 @@ extends Control
 const MILK_OPTIONS: Array[String] = ["Moonmilk", "Frostmilk", "Starlight foam", "Embercream"]
 const SYRUP_OPTIONS: Array[String] = ["Frostberry", "Amberglow", "Cinderspice", "Bittersap"]
 const TEMPERATURE_OPTIONS: Array[String] = ["Hot", "Iced"]
+# Colors depending on choices
 const MILK_COLORS := {
 	"moonmilk": Color("dcdcf0"),
 	"frostmilk": Color("cceeff"),
 	"starlight foam": Color("f5f5ff"),
 	"embercream": Color("f0c080"),
 }
+const SYRUP_COLORS := {
+	"frostberry": Color("6688ff"),
+	"amberglow": Color("ffb030"),
+	"cinderspice": Color("ff5030"),
+	"bittersap": Color("403050"),
+}
+const BAD_POUR_COLOR := Color("7a6a5a")   # muddy brown-grey
 
 # --- Scoring ---
 # Each correct part (temperature, milk, syrup) is worth a third of 100 points.
@@ -136,6 +144,21 @@ func show_order() -> void:
 		r.order_line, r.temperature, r.milk, r.syrup
 	]
 
+# handles reactions :D
+func play_pour_reaction(in_green: bool) -> void:
+	for node in [cup_base, liquid_overlay]:
+		node.pivot_offset = node.size / 2
+		var tween := create_tween()
+		if in_green:
+			# happy bounce
+			tween.tween_property(node, "scale", Vector2(1.15, 1.15), 0.1)
+			tween.tween_property(node, "scale", Vector2.ONE, 0.15)
+		else:
+			# wobble
+			for i in 3:
+				tween.tween_property(node, "rotation_degrees", 5.0, 0.05)
+				tween.tween_property(node, "rotation_degrees", -5.0, 0.05)
+			tween.tween_property(node, "rotation_degrees", 0.0, 0.05)
 
 func update_cup() -> void:
 	cup_label.text = "In the cup:\nTemp: %s   Milk: %s   Syrup: %s" % [
@@ -249,8 +272,6 @@ func _on_milk_chosen(value: String) -> void:
 	if stage != Stage.MILK:
 		return
 	selected_milk = value
-	liquid_overlay.visible = true
-	liquid_overlay.modulate = MILK_COLORS[value.to_lower()]
 	milk_poured = false
 	milk_in_green = false
 	milk_bar.show() 
@@ -262,6 +283,12 @@ func _on_milk_chosen(value: String) -> void:
 func _on_milk_poured(in_green: bool) -> void:
 	milk_poured = true
 	milk_in_green = in_green
+	
+	var good_color: Color = MILK_COLORS[selected_milk.to_lower()]
+	liquid_overlay.modulate = good_color if in_green else good_color.lerp(BAD_POUR_COLOR, 0.65)
+	liquid_overlay.visible = true
+	play_pour_reaction(in_green)
+	
 	stage = Stage.SYRUP
 	update_cup()
 	await get_tree().create_timer(POUR_RESULT_DELAY).timeout
@@ -293,9 +320,11 @@ func _on_syrup_chosen(value: String) -> void:
 func _on_syrup_poured(in_green: bool) -> void:
 	syrup_poured = true
 	syrup_in_green = in_green
+	var target: Color = SYRUP_COLORS[selected_syrup.to_lower()] if in_green else BAD_POUR_COLOR
+	liquid_overlay.modulate = liquid_overlay.modulate.lerp(target, 0.4)
+	play_pour_reaction(in_green)
 	stage = Stage.READY
 	update_cup()
-
 
 # --- Station 4: serve ---
 
