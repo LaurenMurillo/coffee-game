@@ -53,12 +53,12 @@ offset_right = 967.0
 offset_bottom = 380.0
 texture = ExtResource("2_87vmq")
 
-[node name="FinalScoreLabel" type="Label" parent="ScoreBg" unique_id=1263904882]
+[node name="FinalScoreLabel" type="Label" parent="." unique_id=1263904882]
 layout_mode = 0
-offset_left = 182.0
-offset_top = 147.0
-offset_right = 300.0
-offset_bottom = 199.0
+offset_left = 537.0
+offset_top = 254.0
+offset_right = 655.0
+offset_bottom = 306.0
 theme_override_fonts/font = ExtResource("2_6e1uj")
 theme_override_font_sizes/font_size = 30
 text = "Score: "

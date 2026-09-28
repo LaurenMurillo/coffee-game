@@ -25,6 +25,10 @@ var customer_queue: Array[Recipe] = [
 
 var queue_index: int = 0
 
+#saving the overall drink being made
+var last_cup_texture: Texture2D
+var last_liquid_color: Color = Color.WHITE
+
 # -- transition betweeen counter scene and actual brewing scene
 var awaiting_reaction: bool = false
 var last_quality: float = 100.0

@@ -1,0 +1,19 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://wbkrpnqbqecp"]
+
+[ext_resource type="Texture2D" uid="uid://b3awpg8xxflau" path="res://assets/sprites/Customer4/Untitled_Artwork-1 10.png" id="1_r0xp1"]
+[ext_resource type="Texture2D" uid="uid://b0pu8yfd65xu8" path="res://assets/sprites/Customer4/Untitled_Artwork-2 8.png" id="2_0q4sf"]
+[ext_resource type="Texture2D" uid="uid://bf7fe3khmlhjf" path="res://assets/sprites/Customer4/Untitled_Artwork-3 7.png" id="3_jm6ad"]
+
+[resource]
+frames = 5
+speed_scale = 6.0
+frame_0/texture = ExtResource("1_r0xp1")
+frame_0/duration = 5.0
+frame_1/texture = ExtResource("2_0q4sf")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_jm6ad")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("2_0q4sf")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("1_r0xp1")
+frame_4/duration = 1.0

@@ -329,9 +329,10 @@ func _on_syrup_poured(in_green: bool) -> void:
 # --- Station 4: serve ---
 
 func _on_serve_pressed() -> void:
+	GameState.last_cup_texture = cup_base.texture
+	GameState.last_liquid_color = liquid_overlay.modulate
 	GameState.record_result(calculate_quality())
 	get_tree().change_scene_to_file("res://scenes/counter.tscn")
-
 
 # --- Scoring ---
 

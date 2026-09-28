@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bdgl0f0nun6cd" path="res://assets/sprites/speech_bg.png" id="5_u6cvs"]
 [ext_resource type="Texture2D" uid="uid://chninwhxs8q3q" path="res://assets/sprites/next_btn.png" id="6_vv7id"]
 [ext_resource type="Texture2D" uid="uid://ddv0chory807e" path="res://assets/sprites/music_btn.png" id="7_u6cvs"]
+[ext_resource type="Texture2D" uid="uid://c4rrdgjapy22c" path="res://assets/sprites/cup/pour.png" id="10_uk4ww"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yttel"]
 
@@ -155,3 +156,25 @@ scale = Vector2(0.61, 0.61)
 icon = ExtResource("7_u6cvs")
 flat = true
 expand_icon = true
+
+[node name="DrinkDisplay" type="Control" parent="." unique_id=499127740]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DrinkCup" type="TextureRect" parent="DrinkDisplay" unique_id=2015021042]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 630.0
+offset_top = 467.0
+offset_right = 724.0
+offset_bottom = 604.0
+
+[node name="DrinkLiquid" type="TextureRect" parent="DrinkDisplay" unique_id=861586005]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 630.0
+offset_top = 467.0
+offset_right = 745.0
+offset_bottom = 635.0
+texture = ExtResource("10_uk4ww")

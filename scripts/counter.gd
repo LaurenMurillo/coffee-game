@@ -14,7 +14,9 @@ extends Control
 @onready var start_brewing_button: Button = $StartBrewingButton
 @onready var next_customer_button: Button = $NextCustomerButton
 @onready var mute_button: Button = $MuteButton
-
+@onready var drink_display: Control = $DrinkDisplay
+@onready var drink_cup: TextureRect = $DrinkDisplay/DrinkCup
+@onready var drink_liquid: TextureRect = $DrinkDisplay/DrinkLiquid
 
 # Godot runs this automatically every time the counter scene loads 
 func _ready() -> void:
@@ -34,6 +36,7 @@ func _on_mute_pressed() -> void:
 
 #handles switching to new customer/ what happens when there's no more
 func next_customer() -> void:
+	drink_display.hide()
 	reaction_label.text = ""
 	next_customer_button.hide()
 	# -- Handles different customer lineup 
@@ -63,6 +66,9 @@ func show_reaction() -> void:
 	else:
 		reaction_label.text = "This isn't what I ordered..."
 	update_score()
+	drink_cup.texture = GameState.last_cup_texture
+	drink_liquid.modulate = GameState.last_liquid_color
+	drink_display.show()
 	start_brewing_button.hide()
 	next_customer_button.show()
 
