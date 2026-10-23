@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b7pwpxk07fc11"]
 
 [ext_resource type="Script" uid="uid://biidpt3a8e28c" path="res://scripts/startScreen.gd" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://yko1yu1ds5mg" path="res://assets/sprites/CounterArt.png" id="2_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bh727f2nes1o7" path="res://assets/sprites/game_title.png" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://d0gcwaivcx0j6" path="res://assets/sprites/start_btn.png" id="2_yqjtg"]
 
@@ -20,23 +21,31 @@ offset_right = 1266.0
 offset_bottom = 704.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.52156866, 0.65882355, 0.2, 1)
+color = Color(0.9267843, 0.8801575, 0.74398875, 1)
+
+[node name="Extra bg" type="TextureRect" parent="." unique_id=394139445]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -10.0
+offset_right = 1292.0
+offset_bottom = 728.0
+texture = ExtResource("2_lbhrr")
 
 [node name="TitleRect" type="TextureRect" parent="." unique_id=1061269842]
 layout_mode = 0
-offset_left = 183.0
-offset_top = 61.0
-offset_right = 1105.0
-offset_bottom = 536.0
+offset_left = 201.0
+offset_top = 42.0
+offset_right = 1123.0
+offset_bottom = 517.0
 texture = ExtResource("2_lnu2h")
 
 [node name="PlayButton" type="Button" parent="." unique_id=1389756039]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 459.0
-offset_top = 432.0
-offset_right = 531.421
-offset_bottom = 493.8947
+offset_left = 457.00003
+offset_top = 412.0
+offset_right = 537.6316
+offset_bottom = 478.5263
 scale = Vector2(4.75, 4.75)
 icon = ExtResource("2_yqjtg")
 flat = true
